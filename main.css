@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #212121;
+}
+
+.glitch-effect-example {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.glitch-effect-example .glitchy-text {
+  color: white;
+  font-weight: 600;
+  font-size: 7em;
+  font-family: 'Roboto Mono', sans-serif;
+  text-shadow: -0.03em 0em #67aeff, 0.03em 0em #ff5c5c;
+  animation: glitchbase 320ms infinite;
+  line-height: auto;
+}
+.glitch-effect-example .glitchy-text::after {
+  content: 'Welcome.';
+  position: absolute;
+  transform: translateX(-100%);
+  color: white;
+  clip-path: polygon(0% 45%, 100% 45%, 100% 47%, 0% 47%);
+  animation: glitchafter 1000ms infinite;
+}
+.glitch-effect-example .glitchy-text::before {
+  content: 'Welcome.';
+  position: absolute;
+  transform: translateX(0%);
+  color: white;
+  clip-path: polygon(0% 70%, 100% 70%, 100% 73%, 0% 73%);
+  animation: glitchbefore 1300ms 380ms infinite;
+}
+
+@keyframes glitchbefore {
+  0% {
+    transform: translateX(0%);
+  }
+  49% {
+    transform: translateX(0%);
+  }
+  50% {
+    transform: translate(1%, 0%);
+  }
+  52% {
+    transform: translate(1%, 0%);
+  }
+  53% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+@keyframes glitchafter {
+  0% {
+    transform: translateX(-100%);
+  }
+  49% {
+    transform: translateX(-100%);
+  }
+  50% {
+    transform: translate(-102%, 1%);
+  }
+  52% {
+    transform: translate(-102%, 1%);
+  }
+  53% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+@keyframes glitchbase {
+  0% {
+    text-shadow: -0.05em 0.01em #67aeff, 0.01em -0.02em #ff5c5c;
+  }
+  14% {
+    text-shadow: -0.05em 0.01em #67aeff, 0.01em -0.02em #ff5c5c;
+  }
+  15% {
+    text-shadow: -0.01em 0.02em #67aeff, 0.03em 0em #ff5c5c;
+  }
+  50% {
+    text-shadow: -0.01em 0.02em #67aeff, 0.03em 0em #ff5c5c;
+  }
+  65% {
+    text-shadow: -0.02em 0.01em #67aeff, 0.02em 0.02em #ff5c5c;
+  }
+  85% {
+    text-shadow: -0.02em 0.01em #67aeff, 0.02em 0.02em #ff5c5c;
+  }
+  99% {
+    text-shadow: -0.01em 0.02em #67aeff, 0.04em 0em #ff5c5c;
+  }
+  100% {
+    text-shadow: -0.02em 0em #67aeff, 0.03em 0.02em #ff5c5c;
+  }
+}
